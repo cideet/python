@@ -10,6 +10,9 @@ https://blog.csdn.net/l15031138244/article/details/84927835
 
 https://www.python.org/ftp/python/3.6.2/python-3.6.2-amd64-webinstall.exe
 
+官方英文手册 https://docs.python.org/3/
+廖学峰手册 https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
+
 IDLE
 
 Python基本数据类型
@@ -61,6 +64,20 @@ len({1,2,3}) ==》3
 
 定义字典dict {'A':'AAA','B':'BBB','C':'CCC'}
 {'A':'AAA','B':'BBB'}['A'] ==> 'AAA'
+
+身份运算符【is】（内存地址）
+1==1.0 ==> True
+1 is 1.0 ==> False
+[1,2]==[1,2] ==》True
+[1,2] is [1,2] ==> False 内存地址不同
+{1,2,3}=={2,1,3} ==> True
+
+type(11)==int
+isinstance(111,int) ==> True
+isinstance('11',(float,int)) ==> False
+
+位运算符（把数字当作二进制数进行运算）
+&按位与  |按位或  ^按位异或  -按位取反  <<左移  >>右移动
 
 
 
