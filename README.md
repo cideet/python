@@ -15,6 +15,9 @@ https://www.python.org/ftp/python/3.6.2/python-3.6.2-amd64-webinstall.exe
 
 IDLE
 
+在 Windows 设置环境变量
+path=%path%;C:\Program Files\Python36
+
 Python基本数据类型
 Number (init float)
 2进制 0b111 ==> 7 
