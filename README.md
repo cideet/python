@@ -86,3 +86,5 @@ isinstance('11',(float,int)) ==> False
 (3 or 4)and 5 ==》5
 
 进入目录，执行命令【python 6.1.py】
+
+查看帮助，比如查看round()函数，输入【python】===》》》【help(round)】
