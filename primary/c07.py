@@ -71,6 +71,19 @@ print('通过序列的切片，实现间隔取值')
 # Python是如何区分普通文件夹和Python的包呢？
 # 有没有“__init__.py”，就算为空
 
-# 在c07.py中引入c07_test.py定义的变量a
-import c07_test
+
+import c07_test  # 在c07.py中导入c07_test.py
+import c07_test2.test  # 导入不同包的模块
+import c07_test2.test as t  # as
+from c07_test3.test import a  # from import
+from c07_test3 import test  # from import
+from c07_test4.test import *  # from import
+from c07_test5.test import *  # __all__控制*导出
+
 print(c07_test.a)
+print(c07_test2.test.a)
+print(t.a)
+print(a)
+print(test.a)
+print(a4, b4, c4, d4)
+print(a5, b5, c5)  # __all__控制了d5的导出
