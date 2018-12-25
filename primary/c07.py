@@ -47,12 +47,30 @@ for x in range(10, 0, -1):
     print('递减', x)
 
 arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print('隔列取值')
+print('间隔取值')
+# 第一种方法
 for i in range(0, len(arr5), 2):
     print(arr5[i], end=' | ')
+# 第二种方法
 b5 = arr5[0:len(arr5):2]
 print(b5)
 print('arr5[0:len(arr5):2]')
-print('通过序列的切片，实现隔列取值')
+print('通过序列的切片，实现间隔取值')
 print('arr5[0:len(arr5):2]')
-print('通过序列的切片，实现隔列取值')
+print('通过序列的切片，实现间隔取值')
+
+# 包 -> 文件夹
+# 模块 -> py文件
+# 类 ->
+# 函数、变量 ->
+
+# 区分不同包的同名模块，需要在模块的前面加上包的名字
+# 比如 six.c4 seven.c4
+# 这也就是命名空间
+
+# Python是如何区分普通文件夹和Python的包呢？
+# 有没有“__init__.py”，就算为空
+
+# 在c07.py中引入c07_test.py定义的变量a
+import c07_test
+print(c07_test.a)
