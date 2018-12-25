@@ -90,3 +90,13 @@ print(test.a)
 print(a4, b4, c4, d4)
 print(a5, b5, c5)  # __all__控制了d5的导出
 print(a6, b6, c6)
+
+# import sys
+# import datetime
+# import io
+# print(sys.path)
+# 每个模块中，重复导入模块
+
+# # 可以借助__init__.py来实现
+# import c07_test7
+# print(c07_test7.sys.path)
