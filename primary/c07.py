@@ -75,8 +75,8 @@ import c07_test  # 在c07.py中导入c07_test.py
 import c07_test2.test  # 导入不同包的模块
 import c07_test2.test as t  # as
 from c07_test3.test import a  # from import
-from c07_test3 import test  # from import
-from c07_test4.test import *  # from import
+from c07_test3 import test
+from c07_test4.test import *
 from c07_test5.test import *  # __all__控制*导出
 from c07_test6.test import *
 
@@ -97,6 +97,9 @@ print(a6, b6, c6)
 # print(sys.path)
 # 每个模块中，重复导入模块
 
-# # 可以借助__init__.py来实现
-# import c07_test7
-# print(c07_test7.sys.path)
+# 可以借助__init__.py来实现批量导入
+import c07_test7  # 自动找到c07_test7包的__init__.py
+
+print(c07_test7.sys.path)
+
+# 模块不要循环导入，否则会报错
