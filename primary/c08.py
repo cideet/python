@@ -41,3 +41,18 @@ print(skil2)
 # 不如写成
 a, b, c = 1, 2, 3  # 序列解包
 print(a, b, c)
+
+e = 1, 2, 3
+print(e)
+print(type(e))  # <class 'tuple'>
+
+
+# 定义函数时的参数叫形参，调用函数时的参数叫实参
+
+def devision(x=999, y=333):  # 参数的默认值
+    return x / y
+
+
+print('关键字参数，可增加代码的可读性')
+print(devision(y=2, x=8))  # 4
+print(devision())
