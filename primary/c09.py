@@ -52,8 +52,9 @@ class Students33():
     name = '张3丰'  # 类变量
 
     def __init__(self, name, age):  # 初始化对象的属性 self可以改成任意单词，比如this
-        self.name = name  # 类变量 实例变量
+        self.name = name  # 实例变量
         self.age = age
+        # self代表当前调用的对象，只和实例有关，与类无关。
 
     def print_file(self):
         return self.name, self.age
@@ -62,3 +63,5 @@ class Students33():
 student33 = Students33('张三丰', 30)
 print(student33.print_file())
 print(Students33.name)  # 类变量
+print(student33.__dict__)  # {'name':'张三丰','age':30}
+print(Students33.__dict__)
