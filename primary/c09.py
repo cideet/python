@@ -221,17 +221,24 @@ print('-------------------------------------------------------------------------
 
 print('子类调用父类的构造函数')
 
+
 # from c09_human import Human
 class Students10(Human):
     def __init__(self, school, name, age):
         self.school = school
-        Human.__init__(self, name, age)  # 子类调用父类的构造函数
+        # Human.__init__(self, name, age)  # 子类调用父类的构造函数
+        super(Students10, self).__init__(name, age)  # 子类调用父类的构造函数的正确姿势
+
+    def do(self):
+        print('do')
 
 
 print(Students10.sum)
 stu10 = Students10('清华中学', '石敢当', 30)
 print(stu10.name, stu10.age)
 stu10.getInfo()
+Students10.do(stu10)  # 这种调用很可笑，但是可行
+Students10.do('')  # 就算放空字符串都行，但不能什么也没有
 
 print('------------------------------------------------------------------------------')
 print('------------------------------------------------------------------------------')
