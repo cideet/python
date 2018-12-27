@@ -71,6 +71,7 @@ print(student33.__dict__)  # {'name':'张三丰','age':30}
 print(Students33.__dict__)
 
 print('------------------------------------------------------------------------------')
+
 print('类变量')
 
 
@@ -90,6 +91,7 @@ stu43 = Students44('张4丰3', 27)
 print('此示例可以看出，类的每一次实例化，类变量sum+1')
 
 print('------------------------------------------------------------------------------')
+
 print('类方法和静态方法的定义和调用')
 
 
@@ -131,8 +133,72 @@ Students55.add(22, 33)  # 静态方法的调用
 st53.add2(31, 5)
 
 print('------------------------------------------------------------------------------')
+
+
+class Students66():
+    def __init__(self):
+        self.score = 0
+
+    def marking(self, name, score):
+        self.name = name
+        self.score = score
+        if self.score < 0:
+            print('不能设置负分')
+            return
+        elif self.score > 100:
+            print('不能超过100分')
+            return
+        print(self.name + '同学本次考试得分是：' + str(self.score) + '分')
+
+
+stu6 = Students66()
+# print('请给石敢当同学打分')
+# score = int(input())
+stu6.marking('石敢当', 78)
+
 print('------------------------------------------------------------------------------')
+
+print('私有方法')
+
+
+class Students77():
+    def __init__(self):
+        self.score = 0
+
+    def __marking(self, name, score):
+        self.name = name
+        self.score = score
+        print(self.name + '同学本次考试得分是：' + str(self.score) + '分')
+
+
+stu7 = Students77()
+# stu7.__marking('石敢当', 77)
+print('私有方法不能被调用')
+
 print('------------------------------------------------------------------------------')
+
+
+class Students88():
+    def __init__(self):
+        self.__score = 0
+        self.height = '177cm'
+
+
+stu8 = Students88()
+stu8.__score = 65
+print(stu8.__score)
+print('不是类的私有属性能被实例对象赋值和读取，此处的__score只是实例对象动态添加的一个属性')
+stu8.__rrr = 77
+print(stu8.__rrr)
+print('信了吗？')
+stu88 = Students88()
+# print(stu88.__score)  # 报错，私有属性不能被读取
+print(stu88.height)
+print('看懂了么？')
+print(stu8.__dict__)
+print(stu88.__dict__)
+print('Python类的私有变量处理方式，让人很呵呵哇')
+
 print('------------------------------------------------------------------------------')
 print('------------------------------------------------------------------------------')
 print('------------------------------------------------------------------------------')
