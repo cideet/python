@@ -231,14 +231,16 @@ class Students10(Human):
 
     def do(self):
         print('do')
+        super(Students10, self).getInfo()  # 子类调用父类的方法
 
 
 print(Students10.sum)
 stu10 = Students10('清华中学', '石敢当', 30)
 print(stu10.name, stu10.age)
 stu10.getInfo()
-Students10.do(stu10)  # 这种调用很可笑，但是可行
-Students10.do('')  # 就算放空字符串都行，但不能什么也没有
+stu10.do()
+# Students10.do(stu10)  # 这种调用很可笑，但是可行
+# Students10.do('')  # 就算放空字符串都行，但不能什么也没有
 
 print('------------------------------------------------------------------------------')
 print('------------------------------------------------------------------------------')
