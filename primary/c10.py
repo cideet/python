@@ -2,7 +2,9 @@
 
 program = 'C|C++|Java|C#|Python|JavaScript'
 print(program.index('Python'))  # 14
+print(program.index('Python111'))  # 找不到就报错？？
 print('Python' in program)  # True
+print('Python111' in program)  # False
 
 import re
 
