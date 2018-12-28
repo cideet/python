@@ -26,7 +26,27 @@ print(re.findall('\W', str11))  # [' ', '^']
 print(re.findall('\s', str11))  # 匹配空白字符
 
 str22 = 'abc,acc,agc,afc,aic'
-print()
 # print(re.findall('a[(f)(c)]c', str22))
 print("找出字符串中所有的afc或acc", re.findall('a[fc]c', str22))
 print("^非", re.findall('a[^fc]c', str22))
+print(re.findall('[a-z]{3}', str22))
+
+str33 = 'python12123php234java'
+print(re.findall('[a-z]{3,6}', str33))  # ['python', 'php', 'java']
+print('Python默认为贪婪规则，尽可能的匹配更多')
+print('加?号将正则改成非贪婪模式')
+print(re.findall('[a-z]{3,6}?', str33))  # ['pyt', 'hon', 'php', 'jav']
+
+str44 = 'pytho23213python35pythonn'
+print(re.findall('python*', str44))  # ['pytho', 'python', 'pythonn']
+print('*号表示匹配0次和无限多次')
+print(re.findall('python+', str44))  # ['python', 'pythonn']
+print('+号表示匹配1次和无限多次')
+print(re.findall('python?', str44))  # ['pytho', 'python', 'python']
+print('?号表示匹配0次和1次')
+print(re.findall('python{1,2}', str44))
+print(re.findall('python{1,2}?', str44))
+
+str55 =  'pytho23213pythno35pythonn'
+print(re.findall('python{1,2}', str55))
+print(re.findall('python{1,2}?', str55))
