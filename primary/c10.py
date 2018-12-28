@@ -25,9 +25,12 @@ print(re.findall('\w', str11))
 print(re.findall('\W', str11))  # [' ', '^']
 print(re.findall('\s', str11))  # 匹配空白字符
 
+print('------------------------------------------------------------------------------')
+
 str22 = 'abc,acc,agc,afc,aic'
 # print(re.findall('a[(f)(c)]c', str22))
 print("找出字符串中所有的afc或acc", re.findall('a[fc]c', str22))
+print("这里可以理解为：两边的a和c是定界符，只是为了找出中间的内容f或c")
 print("^非", re.findall('a[^fc]c', str22))
 print(re.findall('[a-z]{3}', str22))
 
@@ -36,6 +39,8 @@ print(re.findall('[a-z]{3,6}', str33))  # ['python', 'php', 'java']
 print('Python默认为贪婪规则，尽可能的匹配更多')
 print('加?号将正则改成非贪婪模式')
 print(re.findall('[a-z]{3,6}?', str33))  # ['pyt', 'hon', 'php', 'jav']
+
+print('------------------------------------------------------------------------------')
 
 str44 = 'pytho23213python35pythonn'
 print(re.findall('python*', str44))  # ['pytho', 'python', 'pythonn']
@@ -47,6 +52,60 @@ print('?号表示匹配0次和1次')
 print(re.findall('python{1,2}', str44))
 print(re.findall('python{1,2}?', str44))
 
-str55 =  'pytho23213pythno35pythonn'
+str55 = 'pytho23213pythno35pythonn'
 print(re.findall('python{1,2}', str55))
 print(re.findall('python{1,2}?', str55))
+
+print('------------------------------------------------------------------------------')
+
+print('比如：正则匹配4-8位的QQ号')
+# print('请输入QQ号')
+# qq = input()
+qq = '1234567'
+res = re.findall('^[1-9]\d{3,7}$', qq)
+if (len(res) > 0):
+    print('QQ号输入正确', res[0])
+else:
+    print('QQ号匹配失败')
+
+print('------------------------------------------------------------------------------')
+
+str66 = 'PythonPythonPythonsdg'
+reg = '(Python){3}'
+print(re.findall(reg, str66))
+print('某个正则表达式重复N次：(reg){n}')
+print(re.findall('python', str66))
+print('忽略大小写 re.I')
+print(re.findall('python', str66, re.I))
+
+print('------------------------------------------------------------------------------')
+
+print('替换')
+str77 = 'PHPPHPphpPHP124dPhpP'
+newStr77 = re.sub('PHP', 'Python', str77)
+newStr777 = re.sub('PHP', 'Python', str77, 1)  # 只替换一个
+# re.sub('PHP', 'Python', str77)
+print(str77)
+print('字符串为什么没变？因为字符串类型是不可改变的')
+print(newStr77)
+print(newStr777)
+print('替换中的忽略大小写呢？')
+
+print('------------------------------------------------------------------------------')
+
+print('re.sub中加入函数，将正则出的字符串动态替换')
+
+
+def convert(value):
+    # print(value)  # <_sre.SRE_Match object; span=(0, 3), match='PHP'>
+    matched = value.group()
+    return "!!" + matched + "!!"
+
+
+str88 = 'PHPPHPphpPHP124dPhpP'
+newstr = re.sub('PHP', convert, str88)
+print(newstr)
+
+print('------------------------------------------------------------------------------')
+print('------------------------------------------------------------------------------')
+print('------------------------------------------------------------------------------')
