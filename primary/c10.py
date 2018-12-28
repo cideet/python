@@ -107,5 +107,32 @@ newstr = re.sub('PHP', convert, str88)
 print(newstr)
 
 print('------------------------------------------------------------------------------')
+
+s = 'ABC3721D86'
+print('找出数字，大于6换成9，小于6换成0')
+
+
+def convert(value):
+    matched = int(value.group())
+    if (matched > 6):
+        return '9'
+    elif (matched < 6):
+        return '0'
+    else:
+        return '6'
+
+
+r = re.sub('\d', convert, s)
+print(s + "==>>" + r)
+
 print('------------------------------------------------------------------------------')
+
+print('re.match-->>首字母开始匹配')
+print('re.search-->>找第一个匹配')
+print(re.match('a', 'abcdefg'))  # <_sre.SRE_Match object; span=(0, 1), match='a'>
+print(re.match('b', 'abcdefg'))  # None
+print(re.search('a', 'abcdefg'))  # <_sre.SRE_Match object; span=(0, 1), match='a'>
+print(re.search('b', 'abcdefg'))  # <_sre.SRE_Match object; span=(1, 2), match='b'>
+print(re.search('h', 'abcdefg'))  # None
+
 print('------------------------------------------------------------------------------')
