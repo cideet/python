@@ -136,3 +136,24 @@ print(re.search('b', 'abcdefg'))  # <_sre.SRE_Match object; span=(1, 2), match='
 print(re.search('h', 'abcdefg'))  # None
 
 print('------------------------------------------------------------------------------')
+
+print('获取定界符之间的字符串（life和Python）')
+s = 'life is short,I use Python'
+print(re.search('life.*Python', s))
+print('默认是一个分组，只是一般省略了()')
+print(re.search('(life.*Python)', s))  # <_sre.SRE_Match object; span=(0, 26), match='life is short,I use Python'>
+print(re.search('(life.*Python)', s).group())  # life is short,I use Python
+print(re.search('(life.*Python)', s).group(0))  # life is short,I use Python
+print(re.search('life(.*)Python', s).group(1))  # is short,I use
+print('OK，就是我们想要的')
+print(re.findall('life(.*)Python', s)[0])
+print('看到没，findall优秀很多')
+
+print('------------------------------------------------------------------------------')
+
+s = 'life is short,I use Python, I love Python'
+r = re.search('life(.*)Python(.*)Python', s)
+print(r.group(0, 1, 2))  # ('life is short,I use Python, I love Python', ' is short,I use ', ', I love ')
+print(r.groups())  # (' is short,I use ', ', I love ')
+
+print('------------------------------------------------------------------------------')
