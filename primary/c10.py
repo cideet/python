@@ -2,7 +2,7 @@
 
 program = 'C|C++|Java|C#|Python|JavaScript'
 print(program.index('Python'))  # 14
-print(program.index('Python111'))  # 找不到就报错？？
+# print(program.index('Python111'))  # 找不到就报错？？
 print('Python' in program)  # True
 print('Python111' in program)  # False
 
@@ -158,4 +158,34 @@ r = re.search('life(.*)Python(.*)Python', s)
 print(r.group(0, 1, 2))  # ('life is short,I use Python, I love Python', ' is short,I use ', ', I love ')
 print(r.groups())  # (' is short,I use ', ', I love ')
 
+print('------------------------------------------------------------------------------')
+
+print('JSON字符串的反序列化')
+import json
+
+json_str = '{"name":"张三丰","age":30,"text":"这是一个基本的JSON字符串"}'
+student = json.loads(json_str)  # JSON字符串转dict
+print(student)
+print(type(student))  # dict字典
+print(student['name'])
+# print(student['name'])  # 报错
+
+json_arr = '[{"name":"张三丰","age":30},{"name":"张三丰22","age":29,"g":false}]'
+st = json.loads(json_arr)
+print(st)
+print(type(st))  # list
+print(st[1]['g'])  # False
+
+print('------------------------------------------------------------------------------')
+
+print('JSON的序列化')
+
+aList = [{"name": "张三丰", "age": 30}, {"name": "张三丰22", "age": 29, "g": False}]
+print(aList)
+str = json.dumps(aList)
+print(str)
+print(type(str))  # str
+
+print('------------------------------------------------------------------------------')
+print('------------------------------------------------------------------------------')
 print('------------------------------------------------------------------------------')
