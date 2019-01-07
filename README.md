@@ -21,6 +21,8 @@ path=%path%;C:\Program Files\Python36
 
 PyCharm教程 https://www.cnblogs.com/mfmdaoyou/p/7345392.html
 
+爬虫库 BeautifulSoup Scrapy
+
 Python基本数据类型
 Number (init float)
 2进制 0b111 ==> 7 
