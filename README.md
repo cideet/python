@@ -1,5 +1,24 @@
 # python
 
+#################################################################
+
+# Python Flask高级编程
+
+https://coding.imooc.com/class/chapter/194.html#Anchor
+
+python -V
+pip -V
+pip install pipenv
+pip install pipenv --user （加个“--user”就OK！！！）
+
+
+
+
+
+
+
+###################################################################
+
 # 全面系统 Python3入门+进阶课程
 # 从基础语法开始，体验python语言之美
 
